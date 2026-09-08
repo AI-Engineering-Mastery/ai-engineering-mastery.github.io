@@ -3,39 +3,78 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Thank you — Production-Ready RAG &amp; Backend Architecture</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Your download — Production-Ready RAG &amp; Backend Architecture</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0B111E;--card:#141C2E;--line:#222C43;--ink:#F2F5FA;--muted:#9AA6BD;--accent:#FF782B}
+:root{--bg:#0B111E;--card:#141C2E;--card2:#182034;--line:#222C43;--line2:#2C3752;
+  --ink:#F2F5FA;--muted:#9AA6BD;--dim:#6E7B94;--accent:#FF782B}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);color:var(--ink);
-  font:400 16px/1.65 Inter,system-ui,sans-serif;padding:32px;text-align:center}
-.card{max-width:560px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:48px 40px}
-.tick{width:60px;height:60px;margin:0 auto 26px;border-radius:50%;background:rgba(255,120,43,.13);
-  border:1px solid rgba(255,120,43,.4);display:grid;place-items:center}
-h1{font:600 27px Poppins,sans-serif;letter-spacing:-.02em;margin:0 0 14px}
-p{color:var(--muted);margin:0 0 14px;font-size:15.4px}
-a.btn{display:inline-block;margin-top:20px;padding:13px 24px;border-radius:10px;background:var(--accent);
-  color:#160B02;font:600 14.5px Inter,sans-serif;text-decoration:none}
-small{display:block;margin-top:26px;color:#6E7B94;font-size:13px;line-height:1.6}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);
+  color:var(--ink);font:400 16px/1.65 Inter,system-ui,-apple-system,sans-serif;padding:32px}
+.card{max-width:560px;width:100%;background:var(--card);border:1px solid var(--line);
+  border-radius:18px;padding:44px 40px;text-align:center}
+.tick{width:62px;height:62px;margin:0 auto 24px;border-radius:50%;
+  background:rgba(255,120,43,.13);border:1px solid rgba(255,120,43,.4);
+  display:grid;place-items:center}
+h1{font:600 26px Poppins,sans-serif;letter-spacing:-.02em;margin:0 0 12px;line-height:1.25}
+p{color:var(--muted);margin:0 0 14px;font-size:15.2px}
+.dl{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;
+  margin:28px 0 8px;padding:17px 24px;border-radius:12px;background:var(--accent);
+  color:#160B02;font:600 16px Inter,sans-serif;text-decoration:none;
+  box-shadow:0 8px 26px -12px var(--accent);transition:background .15s,transform .12s}
+.dl:hover{background:#ff8a47}
+.dl:active{transform:translateY(1px)}
+.meta{color:var(--dim);font-size:13px;margin:0}
+.ref{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);
+  color:var(--dim);font-size:13px;line-height:1.65}
+.ref code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.4px;
+  background:var(--card2);border:1px solid var(--line2);border-radius:5px;
+  padding:2px 7px;color:var(--muted)}
+a.plain{color:var(--accent);text-decoration:none}
+a.plain:hover{text-decoration:underline}
 </style>
 </head>
 <body>
   <div class="card">
     <div class="tick">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF782B" stroke-width="2.6"
-           stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#FF782B"
+           stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6 9 17l-5-5"/></svg>
     </div>
+
     <h1>Thank you — your order is confirmed.</h1>
-    <p>Your download links for the PDF and the Kindle-ready DOCX have been emailed to the
-       address you used at checkout. They should arrive within a minute or two.</p>
-    <p>Both files are DRM-free and yours to keep. Future revised editions are free — you'll
-       get a fresh link at the same address.</p>
-    <a class="btn" href="/">Back to the book</a>
-    <small>Nothing in your inbox? Check spam, then email us and we'll resend it straight away.</small>
+    <p>Paddle has emailed your receipt. Your book is ready to download below.</p>
+
+    <a class="dl" id="dl"
+       href="https://drive.google.com/uc?export=download&id=19fWFivOhstCIJ6fbKZlHVH_U_x0hacxx">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+      Download the PDF
+    </a>
+    <p class="meta">186 pages · PDF · no DRM</p>
+
+    <div class="ref">
+      <p style="margin:0 0 8px">Bookmark this page — you can return to it any time.
+         Revised editions are free, and we'll email you when one ships.</p>
+      <p style="margin:0" id="order"></p>
+      <p style="margin:10px 0 0">Trouble downloading?
+         <a class="plain" href="mailto:hello@example.com">Email us</a> and we'll send it directly.</p>
+    </div>
   </div>
+
+<script>
+  // Paddle appends ?_ptxn=txn_... to the success URL. Show it so buyers have
+  // something to quote if they need support.
+  var txn = new URLSearchParams(location.search).get("_ptxn");
+  if (txn) {
+    document.getElementById("order").innerHTML =
+      "Order reference <code>" + txn.replace(/[^\w-]/g, "") + "</code>";
+  }
+</script>
 </body>
 </html>

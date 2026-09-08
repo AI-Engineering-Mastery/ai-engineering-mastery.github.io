@@ -32,6 +32,17 @@ Live in 1–2 minutes at https://ai-engineering-mastery.github.io
 5. **Fallback price** (optional). Set `FALLBACK_PRICE` in the config block so a price
    still shows if Paddle's PricePreview call fails.
 
+## Delivering the files after purchase
+
+Paddle Billing does **not** host your PDF. See `fulfillment-worker/` — a Cloudflare
+Worker that verifies the purchase with Paddle's API and serves the files from a
+private R2 bucket behind 30-minute signed links.
+
+After deploying it, set `WORKER` at the top of the script in `thanks.html` to the
+worker's URL.
+
+**Never commit the PDF or DOCX to this repo — it is public.**
+
 ## Files
 
 | File | Purpose |

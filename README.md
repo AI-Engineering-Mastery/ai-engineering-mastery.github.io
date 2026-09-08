@@ -28,7 +28,7 @@ Live in 1–2 minutes at https://ai-engineering-mastery.github.io
 2. **Approve the domain in Paddle.** Paddle → Checkout → Website approval →
    add `ai-engineering-mastery.github.io`. Checkout will not open without this.
 3. **Social share image.** Save the exported Canva creative as `assets/og.png` (1200×675).
-4. **Contact email.** Replace `hello@example.com` in the footer of `index.html`.
+4. **Contact email.** Set to `ganusah19991122@gmail.com` in `index.html` and `thanks.html`.
 5. **Fallback price** (optional). Set `FALLBACK_PRICE` in the config block so a price
    still shows if Paddle's PricePreview call fails.
 

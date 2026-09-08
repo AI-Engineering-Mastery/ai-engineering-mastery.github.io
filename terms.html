@@ -6,63 +6,97 @@
 <title>Terms of Service — AI Engineering Mastery</title>
 <meta name="description" content="Terms governing the purchase and use of Production-Ready RAG & Backend Architecture.">
 <link rel="canonical" href="https://ai-engineering-mastery.github.io/terms.html">
+<meta name="theme-color" content="#0B111E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0B111E;--card:#141C2E;--line:#222C43;--line2:#2C3752;
-  --ink:#F2F5FA;--muted:#9AA6BD;--dim:#6E7B94;--accent:#FF782B;--max:760px}
+:root{--bg:#0B111E;--bg2:#0F1626;--card:#141C2E;--card2:#182034;
+  --line:#222C43;--line2:#2C3752;--ink:#F2F5FA;--muted:#9AA6BD;--dim:#6E7B94;
+  --accent:#FF782B;--max:1120px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font:400 16px/1.7 Inter,system-ui,-apple-system,Segoe UI,sans-serif;
-  -webkit-font-smoothing:antialiased}
-a{color:var(--accent)}
+  font:400 16px/1.65 Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{font-family:Poppins,Inter,sans-serif;font-weight:600;letter-spacing:-.02em;margin:0}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-header{border-bottom:1px solid var(--line);background:rgba(11,17,30,.9);
-  position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}
-.nav{display:flex;align-items:center;gap:16px;height:64px;max-width:var(--max);
-  margin:0 auto;padding:0 24px}
+
+/* header — identical to the landing page */
+header{position:sticky;top:0;z-index:50;background:rgba(11,17,30,.82);
+  backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.on{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;gap:28px;height:66px}
 .brand{display:flex;align-items:center;gap:10px;font:600 15px Poppins,sans-serif;
-  text-decoration:none;color:var(--ink);white-space:nowrap}
+  text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
 .brand .mk{width:24px;height:24px;border-radius:6px;background:var(--accent);
   display:grid;place-items:center;font:700 12px Poppins,sans-serif;color:#0B111E}
-.nav .back{margin-left:auto;font-size:14px;color:var(--muted);text-decoration:none}
-.nav .back:hover{color:var(--ink)}
-main{padding:56px 0 80px}
-h1{font:600 34px/1.2 Poppins,sans-serif;letter-spacing:-.025em;margin:0 0 10px}
-.upd{color:var(--dim);font-size:13.5px;margin:0 0 40px;padding-bottom:24px;
+.nav nav{display:flex;gap:26px;margin-left:auto}
+.nav nav a{color:var(--muted);text-decoration:none;font-size:14px;transition:color .15s}
+.nav nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 16px;
+  border-radius:8px;font:600 13.5px Inter,sans-serif;text-decoration:none;cursor:pointer;
+  background:var(--accent);color:#160B02;border:1px solid transparent;
+  box-shadow:0 6px 22px -10px var(--accent);transition:background .15s}
+.btn:hover{background:#ff8a47}
+@media(max-width:860px){.nav nav{display:none}}
+@media(max-width:520px){.brand{font-size:13.5px;gap:8px}
+  .brand .mk{width:22px;height:22px;font-size:11px}.nav{gap:12px;height:60px}}
+
+/* document */
+main.wrap{padding-top:76px;padding-bottom:96px}
+.doc{max-width:720px}
+.eyebrow{font:600 11px/1 Poppins,sans-serif;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);display:block;margin-bottom:18px}
+h1{font-size:clamp(30px,4vw,42px);line-height:1.12;margin-bottom:14px}
+.upd{color:var(--dim);font-size:13.5px;margin:0 0 44px;padding-bottom:28px;
   border-bottom:1px solid var(--line)}
-h2{font:600 19px Poppins,sans-serif;letter-spacing:-.015em;margin:38px 0 12px}
+h2{font-size:19px;line-height:1.35;margin:44px 0 14px}
 h2:first-of-type{margin-top:0}
-p{margin:0 0 15px;color:var(--muted)}
-li{color:var(--muted);margin-bottom:8px}
-ul{padding-left:20px;margin:0 0 15px}
-li::marker{color:var(--dim)}
+p{margin:0 0 16px;color:var(--muted);line-height:1.75}
+ul{padding-left:20px;margin:0 0 16px}
+li{color:var(--muted);margin-bottom:9px;line-height:1.72}
+li::marker{color:var(--accent)}
 strong{color:var(--ink);font-weight:600}
-.box{background:var(--card);border:1px solid var(--line);border-radius:12px;
-  padding:20px 22px;margin:22px 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
+  background:var(--card2);border:1px solid var(--line2);border-radius:5px;
+  padding:2px 7px;color:var(--muted)}
+.doc a[href]{color:var(--accent);text-decoration:none}
+.doc a[href]:hover{text-decoration:underline}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:24px 26px;margin:26px 0}
 .box p:last-child{margin-bottom:0}
-footer{border-top:1px solid var(--line);padding:32px 0;color:var(--dim);font-size:13.5px}
-.foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;
-  max-width:var(--max);margin:0 auto;padding:0 24px}
-.foot a{color:var(--muted);text-decoration:none;margin-left:18px}
+
+/* footer — identical to the landing page */
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--dim);font-size:13.5px}
+.foot{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+.foot a{color:var(--muted);text-decoration:none;margin-left:20px}
 .foot a:hover{color:var(--ink)}
-@media(max-width:560px){h1{font-size:27px}.foot a{margin:0 14px 0 0}}
+@media(max-width:560px){.foot a{margin:0 16px 0 0}
+  main.wrap{padding-top:48px;padding-bottom:64px}}
 </style>
 </head>
 <body>
-<header>
-  <div class="nav">
+<header id="hdr">
+  <div class="wrap nav">
     <a class="brand" href="/"><span class="mk">AI</span> AI Engineering Mastery</a>
-    <a class="back" href="/">&larr; Back to the book</a>
+    <nav>
+      <a href="/#inside">Inside</a>
+      <a href="/#contents">Contents</a>
+      <a href="/#formats">Formats</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn" href="/#buy">Get the book</a>
   </div>
 </header>
-<main class="wrap">
-  <h1>Terms of Service</h1>
-  <p class="upd">Last updated 8 September 2026</p>
 
-  <p>These terms govern your purchase and use of <strong>Production-Ready RAG &amp; Backend Architecture</strong>
+<main class="wrap">
+  <div class="doc">
+    <span class="eyebrow">Legal</span>
+    <h1>Terms of Service</h1>
+    <p class="upd">Last updated 8 September 2026</p>
+<p>These terms govern your purchase and use of <strong>Production-Ready RAG &amp; Backend Architecture</strong>
      (the &ldquo;Book&rdquo;), sold through this website by Ganesh Sah, trading as
      AI Engineering Mastery (&ldquo;we&rdquo;, &ldquo;us&rdquo;). By purchasing, you agree to them.</p>
 
@@ -134,10 +168,11 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--dim);font-siz
   <h2>10. Contact</h2>
   <p>Ganesh Sah, AI Engineering Mastery &middot;
      <a href="mailto:ganusah19991122@gmail.com">ganusah19991122@gmail.com</a></p>
-
+  </div>
 </main>
+
 <footer>
-  <div class="foot">
+  <div class="wrap foot">
     <div>© 2026 AI Engineering Mastery · Ganesh Sah</div>
     <div>
       <a href="/terms.html">Terms</a>
@@ -147,5 +182,10 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--dim);font-siz
     </div>
   </div>
 </footer>
+<script>
+addEventListener("scroll",function(){
+  document.getElementById("hdr").classList.toggle("on",scrollY>8);
+},{passive:true});
+</script>
 </body>
 </html>

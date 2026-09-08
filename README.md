@@ -41,7 +41,7 @@ private R2 bucket behind 30-minute signed links.
 After deploying it, set `WORKER` at the top of the script in `thanks.html` to the
 worker's URL.
 
-**Never commit the PDF or DOCX to this repo — it is public.**
+**Never commit the PDF to this repo — it is public.**
 
 ## Files
 

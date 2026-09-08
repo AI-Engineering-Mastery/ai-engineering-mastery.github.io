@@ -209,6 +209,7 @@ details.ch[open] summary{color:var(--accent)}
 
 /* formats */
 .fmt{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:34px}
+.fmt-one{grid-template-columns:1fr;max-width:660px;margin-inline:auto}
 .fmtc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;gap:18px}
 .fmtc .ic{
   width:44px;height:44px;flex:0 0 44px;border-radius:10px;background:var(--card2);
@@ -310,7 +311,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <button class="btn btn-primary buy-btn">Get the book &nbsp;<span class="cta-price"></span></button>
         <a class="btn btn-ghost" href="#contents">See the contents</a>
       </div>
-      <p class="price-note"><b>One-time purchase.</b> PDF + Kindle-ready DOCX. Lifetime updates.</p>
+      <p class="price-note"><b>One-time purchase.</b> Typeset PDF, DRM-free. Lifetime updates.</p>
     </div>
 
     <div class="bookstage">
@@ -494,23 +495,17 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">What you get</span>
-      <h2>Two formats, no DRM, yours forever.</h2>
+      <h2>A properly typeset book, no DRM, yours forever.</h2>
     </div>
-    <div class="fmt">
+    <div class="fmt fmt-one">
       <div class="fmtc">
         <div class="ic">PDF</div>
         <div>
           <h3>Typeset PDF — 186 pages</h3>
-          <p>Cream-paper design, running headers, page numbers, a linked contents list,
-             and 263 PDF bookmarks. Reads well on a tablet and prints cleanly.</p>
-        </div>
-      </div>
-      <div class="fmtc">
-        <div class="ic">DOCX</div>
-        <div>
-          <h3>Kindle-ready DOCX</h3>
-          <p>Reflowable, properly styled headings for e-reader navigation, and every
-             diagram embedded. Load it straight onto a Kindle or convert to EPUB.</p>
+          <p>Not an exported Word file. Cream-paper design, running headers, page numbers,
+             a linked contents list, a list of figures, and 263 nested PDF bookmarks so the
+             sidebar navigation actually works. Set in TeX Gyre Pagella at 6&times;9 inches —
+             reads comfortably on a tablet and prints cleanly.</p>
         </div>
       </div>
     </div>
@@ -580,13 +575,16 @@ html.js .reveal.in{opacity:1;transform:none}
            vector databases, and the cost-attribution material. If your system has no reranker
            or no golden set, start there.</p></details>
       <details class="faq"><summary>What exactly do I receive?</summary>
-        <p>A download link, immediately after checkout, for both the typeset PDF and the
-           Kindle-ready DOCX. No DRM, no account required, no subscription.</p></details>
+        <p>A download link for the typeset PDF, immediately after checkout. No DRM, no
+           account required, no subscription. If you want it on a Kindle, email the file
+           to your Send-to-Kindle address and Amazon converts it for you.</p></details>
       <details class="faq"><summary>Do I get future editions?</summary>
-        <p>Yes. Revised editions are free to existing buyers — you will get an email with the
-           new download link at the address you used at checkout.</p></details>
+        <p>Yes. Revised editions are free to existing buyers. If you opt in at checkout,
+           we'll email you the new download link at the address you used; otherwise just
+           write to us and we'll send it over.</p></details>
       <details class="faq"><summary>What if it isn't useful to me?</summary>
-        <p>Email within 30 days and you get a full refund, no questions asked. Keep the files.</p></details>
+        <p>Email within 30 days and you get a full refund, no questions asked. Keep the files.
+           Full details in our <a href="/refunds.html" style="color:var(--accent)">refund policy</a>.</p></details>
     </div>
   </div>
 </section>
@@ -597,8 +595,9 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="wrap foot">
     <div>© <span id="yr"></span> AI Engineering Mastery · Ganesh Sah</div>
     <div>
-      <a href="#contents">Contents</a>
-      <a href="#faq">FAQ</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/refunds.html">Refunds</a>
       <a href="mailto:ganusah19991122@gmail.com">Contact</a>
     </div>
   </div>
@@ -616,7 +615,7 @@ html.js .reveal.in{opacity:1;transform:none}
 const PADDLE_TOKEN = "live_211ec7b4c9a83a064ce7c096dd9";
 const PADDLE_ENV   = "production";           // "sandbox" while testing
 const PRICE_ID     = "pri_01m1zddc0qk7xx33j0w8z8jw6j";
-const FALLBACK_PRICE = "";                   // e.g. "$39" if PricePreview fails
+const FALLBACK_PRICE = "$29";                // shown if PricePreview fails
 
 const ready = typeof Paddle !== "undefined" &&
               PADDLE_TOKEN.indexOf("REPLACE_WITH") === -1;

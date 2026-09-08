@@ -35,6 +35,13 @@ p{color:var(--muted);margin:0 0 14px;font-size:15.2px}
   padding:2px 7px;color:var(--muted)}
 a.plain{color:var(--accent);text-decoration:none}
 a.plain:hover{text-decoration:underline}
+.mailrow{display:inline-flex;align-items:center;gap:7px;flex-wrap:wrap}
+.cpy{background:none;border:1px solid var(--line2);color:var(--dim);
+  font:500 11px Inter,sans-serif;padding:3px 8px;border-radius:6px;cursor:pointer;
+  transition:color .15s,border-color .15s}
+.cpy:hover{color:var(--ink);border-color:var(--accent)}
+.cpy.ok{color:var(--accent);border-color:var(--accent)}
+
 </style>
 </head>
 <body>
@@ -46,7 +53,8 @@ a.plain:hover{text-decoration:underline}
     </div>
 
     <h1>Thank you — your order is confirmed.</h1>
-    <p>Paddle has emailed your receipt. Your book is ready to download below.</p>
+    <p>Paddle has emailed your receipt. Your copy is ready — the download starts
+       as soon as you click below.</p>
 
     <a class="dl" id="dl"
        href="https://drive.google.com/uc?export=download&id=19fWFivOhstCIJ6fbKZlHVH_U_x0hacxx">
@@ -54,17 +62,18 @@ a.plain:hover{text-decoration:underline}
            stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
         <path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
-      Download the PDF
+      Download your book
     </a>
-    <p class="meta">186 pages · PDF · no DRM</p>
+    <p class="meta">Production-Ready RAG &amp; Backend Architecture · 186 pages · PDF · no DRM</p>
 
     <div class="ref">
-      <p style="margin:0 0 8px">Your receipt from Paddle also contains this download
-         link, so you can come back to it whenever you need. Revised editions of the
-         book are free.</p>
+      <p style="margin:0 0 8px">Bookmark this page to come back to it. If you lose it,
+         email us with your order reference below and we'll resend your download link
+         straight away. Revised editions of the book are free.</p>
       <p style="margin:0" id="order"></p>
-      <p style="margin:10px 0 0">Trouble downloading?
-         <a class="plain" href="mailto:ganusah19991122@gmail.com">Email us</a> and we'll send it directly.</p>
+      <p style="margin:10px 0 0">Trouble downloading? Email
+         <span class="mailrow"><a class="plain" href="mailto:ganusah19991122@gmail.com">ganusah19991122@gmail.com</a><button class="cpy" data-copy="ganusah19991122@gmail.com" type="button">copy</button></span>
+         and we'll send it directly.</p>
       <p style="margin:14px 0 0;font-size:12.5px">
         <a class="plain" href="/terms.html">Terms</a> &middot;
         <a class="plain" href="/privacy.html">Privacy</a> &middot;
@@ -80,6 +89,38 @@ a.plain:hover{text-decoration:underline}
     document.getElementById("order").innerHTML =
       "Order reference <code>" + txn.replace(/[^\w-]/g, "") + "</code>";
   }
+
+document.querySelectorAll(".cpy").forEach(function(b){
+  b.addEventListener("click",function(){
+    var t=b.getAttribute("data-copy");
+    var done=function(){b.textContent="copied";b.classList.add("ok");
+      setTimeout(function(){b.textContent="copy";b.classList.remove("ok")},1600)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(done,done);
+    }else{
+      var i=document.createElement("input");i.value=t;document.body.appendChild(i);
+      i.select();try{document.execCommand("copy")}catch(e){}
+      document.body.removeChild(i);done();
+    }
+  });
+});
+
+
+document.querySelectorAll(".cpy").forEach(function(b){
+  b.addEventListener("click",function(){
+    var t=b.getAttribute("data-copy");
+    var done=function(){b.textContent="copied";b.classList.add("ok");
+      setTimeout(function(){b.textContent="copy";b.classList.remove("ok")},1600)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(done,done);
+    }else{
+      var i=document.createElement("input");i.value=t;document.body.appendChild(i);
+      i.select();try{document.execCommand("copy")}catch(e){}
+      document.body.removeChild(i);done();
+    }
+  });
+});
+
 </script>
 </body>
 </html>
